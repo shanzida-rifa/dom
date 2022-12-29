@@ -8,12 +8,20 @@
     <link rel="stylesheet" href="styles/style.css">
     <title>Tour of Dom</title>
     <style>
+        .fruits-container li {
+            color: red;
+        }
+
         li {
             color: yellowgreen;
         }
 
         #fruits-title {
             color: black;
+        }
+
+        .important-place {
+            color: blueviolet;
         }
     </style>
 </head>
@@ -35,7 +43,7 @@
                 <li>Bonobas</li>
             </ul>
         </section>
-        <section>
+        <section class="fruits-container">
             <h1 id="fruits-title">Fruits</h1>
             <ul>
                 <li>Aam</li>
@@ -45,9 +53,9 @@
         </section>
         <section id="places-title">
             <h1>Places I like to visit</h1>
-            <li>Bandarban</li>
-            <li>Sundarban</li>
-            <li>kataban</li>
+            <li class="important-place">Bandarban</li>
+            <li class="important-place">Sundarban</li>
+            <li class="important-place">kataban</li>
             <li>Shalban</li>
         </section>
     </main>
@@ -63,6 +71,21 @@
         for (const h1 of allHeadings) {
             console.log(h1.innerText);
         }
+
+        const fruitsTitle = document.getElementById('fruits-title');
+        fruitsTitle.innerText = 'Changed By JS';
+        const places = document.getElementsByClassName('important-place');
+        for (const place of places) {
+            console.log(place.innerText);
+        }
+
+        // querySelectorAll
+        const someLi = document.querySelectorAll('.fruits-container li')
+        console.log(someLi);
+        for (const li of someLi) {
+            console.log(li.innerText);
+        }
+
     </script>
 </body>
 
